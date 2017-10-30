@@ -83,4 +83,9 @@ html,body,#app {
   margin-top: 20px;
 }
 
+.markdown-body pre.hljs {
+  background:#002451;
+}
+
+
 </style>
