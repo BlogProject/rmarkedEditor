@@ -705,8 +705,8 @@ function toggleSideBySide(editor) {
 		// give some time for the transition from editor.css to fire and the view to slide from right to left,
 		// instead of just appearing.
 		setTimeout(function() {
-			if(!cm.getOption("fullScreen"))
-				toggleFullScreen(editor);
+      if(!cm.getOption("fullScreen"))
+        toggleFullScreen(editor);
 			preview.className += " editor-preview-active-side";
 		}, 1);
 		toolbarButton.className += " active";
@@ -757,7 +757,7 @@ function togglePreview(editor) {
 	var preview = wrapper.lastChild;
 	if(!preview || !/editor-preview/.test(preview.className)) {
 		preview = document.createElement("div");
-		preview.className = "editor-preview";
+		preview.className = "editor-preview markdown-body";
 		wrapper.appendChild(preview);
 	}
 	if(/editor-preview-active/.test(preview.className)) {

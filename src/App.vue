@@ -5,12 +5,18 @@
       >
     </markdown-editor>
     {{ input}}
+    <code-editor
+      v-model="code"
+      :options="codeOpts">
+    </code-editor>
+    {{ code }}
   </div>
 </template>
 
 <script>
 var rmarked  = require("rmarked")()
 import markdownEditor from "./rsimplemde.vue"
+import codeEditor from './codeEditor.vue'
 export default {
   name: 'app',
   data () {
@@ -22,12 +28,17 @@ export default {
         tabSize:4,
         lineNumbers:true,
         mode:"markdown"
+      },
+      codeOpts:{
+        tabSize:4,
+        lineNumbers:true
       }
 
     }
   },
   components:{
-    markdownEditor
+    markdownEditor,
+    codeEditor
   },
   mounted(){
   },
