@@ -1,22 +1,25 @@
 <template>
   <div id="app">
+    <h1>
+      markdownEditor
+    </h1>
     <markdown-editor
       v-model="input"
       >
     </markdown-editor>
-    {{ input}}
+
+    <h1>
+      codeEditor
+    </h1>
+
     <code-editor
       v-model="code"
       :options="codeOpts">
     </code-editor>
-    {{ code }}
   </div>
 </template>
 
 <script>
-var rmarked  = require("rmarked")()
-import markdownEditor from "./rsimplemde.vue"
-import codeEditor from './codeEditor.vue'
 export default {
   name: 'app',
   data () {
@@ -35,10 +38,6 @@ export default {
       }
 
     }
-  },
-  components:{
-    markdownEditor,
-    codeEditor
   },
   mounted(){
   },
