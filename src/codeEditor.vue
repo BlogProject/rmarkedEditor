@@ -146,9 +146,11 @@
 <style>
 .code-editor {
   padding:5px;
+  font-size:13px;
 }
 .code-editor .CodeMirror {
   border:1px solid #c4c4c4;
   padding:0px;
 }
 </style>
+

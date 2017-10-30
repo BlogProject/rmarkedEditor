@@ -40,6 +40,16 @@ export default {
     }
   },
   mounted(){
+    let self = this
+    $.get("test.md").then(function(data){
+      console.log("test.md loaded success!")
+      self.input= data
+    })
+    $.get("test.cpp").then(function(data){
+      console.log("test.cpp loaded success!")
+      self.code= data
+    })
+
   },
   methods:{
     update(e){

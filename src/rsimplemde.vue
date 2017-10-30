@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import "codemirror/lib/codemirror.css"
-import "./css/simplemde.css"
 var SimpleMDE = require("./simplemde.js")
 export default {
   name:"markdown-editor",
@@ -68,3 +66,9 @@ export default {
 }
 
 </script>
+
+<style>
+.markdown-editor {
+  font-size:13px;
+}
+</style>
