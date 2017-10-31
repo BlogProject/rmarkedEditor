@@ -1,6 +1,6 @@
 ## Demo 
 
-[Demo](http://rainboy.coding.me/rmarkedEditor/
+[Demo](http://rainboy.coding.me/rmarkedEditor/)
 
 ## install
 
