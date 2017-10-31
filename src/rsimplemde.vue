@@ -69,6 +69,6 @@ export default {
 
 <style>
 .markdown-editor {
-  font-size:13px;
+  font-size:16px;
 }
 </style>
