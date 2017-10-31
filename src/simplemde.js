@@ -13,6 +13,7 @@ require("codemirror/mode/xml/xml.js");
 var CodeMirrorSpellChecker = require("codemirror-spell-checker");
 var rmarked = require("rmarked")();
 
+var sideBySideLast
 
 // Some variables
 var isMac = /Mac/.test(navigator.platform);
@@ -726,12 +727,23 @@ function toggleSideBySide(editor) {
 		toolbar_div.className = toolbar_div.className.replace(/\s*disabled-for-preview*/g, "");
 	}
 
-	var sideBySideRenderingFunction = function() {
+
+	var __sideBySideRenderingFunction = function() {
 		preview.innerHTML = editor.options.previewRender(editor.value(), preview);
+	}
+	var sideBySideRenderingFunction = function() {
+	  //debounce
+    clearTimeout(sideBySideLast)
+    sideBySideLast= setTimeout(
+      __sideBySideRenderingFunction,
+      300
+    )
+		//preview.innerHTML = editor.options.previewRender(editor.value(), preview);
 	};
 
 	if(!cm.sideBySideRenderingFunction) {
-		cm.sideBySideRenderingFunction = sideBySideRenderingFunction;
+	  //是否开启
+		  cm.sideBySideRenderingFunction = sideBySideRenderingFunction;
 	}
 
 	if(useSideBySideListener) {
@@ -1218,7 +1230,7 @@ var toolbarBuiltInButtons = {
 	},
 	"guide": {
 		name: "guide",
-		action: "https://simplemde.com/markdown-guide",
+		action: "https://coding.net/u/Rainboy/p/rmarkedEditor/git",
 		className: "fa fa-question-circle",
 		title: "Markdown Guide",
 		default: true

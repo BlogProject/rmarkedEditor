@@ -5,6 +5,7 @@
     </h1>
     <markdown-editor
       v-model="input"
+      :configs="configs"
       >
     </markdown-editor>
 
@@ -35,8 +36,11 @@ export default {
       codeOpts:{
         tabSize:4,
         lineNumbers:true
+      },
+      configs:{
+        debounce:true,
+        debounce_time:3000
       }
-
     }
   },
   mounted(){

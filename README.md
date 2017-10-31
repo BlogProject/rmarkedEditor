@@ -1,6 +1,10 @@
+## Demo 
+
+[Demo](http://rainboy.coding.me/rmarkedEditor/
+
 ## install
 
-package.json
+add package.json
 
 ```
   "dependencies": {
@@ -8,7 +12,7 @@ package.json
   },
 ```
 
-bash
+run cmd in bash
 
 ```
 npm i 
@@ -21,8 +25,27 @@ npm i
 import Vue from 'vue'
 import rmarkedEditor from 'rmarkedEditor'
 
+//引入样式
+import  'codemirror/lib/codemirror.css'
+import "rmarkedEditor/src/css/simplemde.css"
+import "rmarked/css/github-markdown.css"
+import "katex/dist/katex.min.css"
+import "highlight.js/styles/tomorrow-night-blue.css"
+
 Vue.use(rmarkedEditor)
 ```
+
+在组件内
+
+
+```
+<markdown-editor
+  v-model="input"
+  :configs="configs"
+  >
+</markdown-editor>
+```
+
 
 ```
 // 单个组件内使用
@@ -30,9 +53,27 @@ Vue.use(rmarkedEditor)
 
 ## Props
 
+| 属性          | 类型    | 默认值 | 描述                                                                         |
+| ----          | -----   | -----  | ----                                                                         |
+| value         | String  | 无     | 初始值，可使用v-model绑定                                                    |
+| preview-class | String  | 无     | 自定义预览样式类                                                             |
+| autoinit      | Boolean | true   | 是否自动初始化                                                               |
+| highlight     | Boolean | false  | 是否开启高亮                                                                 |
+| sanitize      | Boolean | false  | 开启后不渲染输入的html                                                       |
+| configs       | Object  | {}     | [SimpleMDE的配置项](https://github.com/sparksuite/simplemde-markdown-editor) |
+
+
 
 ## example
 
+
+```
+<code-editor
+  v-model="code"
+  :options="codeOpts">
+</code-editor>
+
+```
 
 ## use as code ide
 
