@@ -11,7 +11,7 @@ require("codemirror/addon/selection/mark-selection.js");
 require("codemirror/mode/gfm/gfm.js");
 require("codemirror/mode/xml/xml.js");
 var CodeMirrorSpellChecker = require("codemirror-spell-checker");
-var rmarked = require("rmarked")();
+var rmarked = require("rmarked");
 
 var sideBySideLast
 
@@ -1348,10 +1348,8 @@ function SimpleMDE(options) {
 
 	// Add default preview rendering function
 	if(!options.previewRender) {
-		options.previewRender = function(plainText) {
-			// Note: "this" refers to the options object
-			return this.parent.markdown(plainText);
-		};
+	  //console.log(options.rmarkedOpts)
+		options.previewRender = rmarked(options.rmarkedOpts || {})
 	}
 
 
@@ -1403,28 +1401,6 @@ function SimpleMDE(options) {
  */
 SimpleMDE.prototype.markdown = function(text) {
 	if(rmarked) {
-		// Initialize
-		var markedOptions = {};
-
-
-		// Update options
-		if(this.options && this.options.renderingConfig && this.options.renderingConfig.singleLineBreaks === false) {
-			markedOptions.breaks = false;
-		} else {
-			markedOptions.breaks = true;
-		}
-
-		if(this.options && this.options.renderingConfig && this.options.renderingConfig.codeSyntaxHighlighting === true && window.hljs) {
-			markedOptions.highlight = function(code) {
-				return window.hljs.highlightAuto(code).value;
-			};
-		}
-
-
-		// Set options
-		//marked.setOptions(markedOptions);
-
-
 		// Return
 		return rmarked(text);
 	}

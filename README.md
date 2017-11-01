@@ -53,15 +53,16 @@ Vue.use(rmarkedEditor)
 
 ## Props
 
-| 属性          | 类型    | 默认值 | 描述                                                                         |
-| ----          | -----   | -----  | ----                                                                         |
-| value         | String  | 无     | 初始值，可使用v-model绑定                                                    |
-| preview-class | String  | 无     | 自定义预览样式类                                                             |
-| autoinit      | Boolean | true   | 是否自动初始化                                                               |
-| highlight     | Boolean | false  | 是否开启高亮                                                                 |
-| sanitize      | Boolean | false  | 开启后不渲染输入的html                                                       |
-| configs       | Object  | {}     | [SimpleMDE的配置项](https://github.com/sparksuite/simplemde-markdown-editor) |
-
+| 属性                  | 类型     | 默认值 | 描述                                                                         |
+| ----                  | -----    | -----  | ----                                                                         |
+| value                 | String   | 无     | 初始值，可使用v-model绑定                                                    |
+| preview-class         | String   | 无     | 自定义预览样式类                                                             |
+| autoinit              | Boolean  | true   | 是否自动初始化                                                               |
+| highlight             | Boolean  | false  | 是否开启高亮                                                                 |
+| sanitize              | Boolean  | false  | 开启后不渲染输入的html                                                       |
+| configs               | Object   | {}     | [SimpleMDE的配置项](https://github.com/sparksuite/simplemde-markdown-editor) |
+| configs.previewRender | Function | null   | 自定义render函数                                                             |
+| configs.rmarkedOpts   | Object   | {}     | [rmarked的配置]()                                                            |
 
 
 ## example
@@ -105,6 +106,7 @@ Vue.use(rmarkedEditor)
  - [Vue-SimpleMDE]()
  - [marked]()
  - [editor]()
+ - [ImageUpload](https://github.com/mishe/Imageupload)
 
 ## Licence
 

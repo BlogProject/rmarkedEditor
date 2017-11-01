@@ -38,8 +38,10 @@ export default {
         lineNumbers:true
       },
       configs:{
-        debounce:true,
-        debounce_time:3000
+        rmarkedOpts:{
+          image:true,
+          image_base:'http://rainboy.coding.me/rmarkedEditor/'
+        }
       }
     }
   },
