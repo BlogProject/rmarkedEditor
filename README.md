@@ -65,7 +65,8 @@ Vue.use(rmarkedEditor)
 | configs.rmarkedOpts   | Object   | {}     | [rmarked的配置]()                                                            |
 
 
-## example
+
+## use as code ide
 
 
 ```
@@ -74,10 +75,11 @@ Vue.use(rmarkedEditor)
   :options="codeOpts">
 </code-editor>
 
+      codeOpts:{
+        tabSize:4,
+        lineNumbers:true
+      },
 ```
-
-## use as code ide
-
 
 ## 快速键
 

@@ -7,6 +7,9 @@ import "rmarked/css/github-markdown.css"
 import "katex/dist/katex.min.css"
 import "highlight.js/styles/tomorrow-night-blue.css"
 
+var markdown = require("rmarked")
+Vue.prototype.markdown_render = markdown
+
 Vue.use(MyEditor)
 
 new Vue({
