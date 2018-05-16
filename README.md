@@ -102,6 +102,12 @@ Vue.use(rmarkedEditor)
 | *F9*          | '全屏预览'     |
 | *F11*         | '全屏'         |
 
+## 其它
+
+Couldn't find preset "es2015" relative to directory问题解决
+
+https://www.cnblogs.com/weizaiyes/p/7462274.html
+
 ## Thanks for
 
  - [SimpleMDE]()
